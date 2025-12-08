@@ -1,0 +1,49 @@
+[project]
+name = "provenance-esg-pipeline"
+version = "0.1.0"
+description = "Production pipeline for extracting structured data from ESG/sustainability reports using OCR and vision-language models."
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "Apache-2.0"}
+authors = [
+    {name = "Sustainability Reports B.V."}
+]
+keywords = ["esg", "sustainability", "ocr", "pdf", "nlp", "document-processing"]
+
+dependencies = [
+    "beautifulsoup4>=4.14.2",
+    "click>=8.0.0",
+    "filetype>=1.2.0",
+    "flask>=3.0.0",
+    "markdownify==1.1.0",
+    "openai>=2.2.0",
+    "pillow>=10.2.0",
+    "pydantic>=2.12.0",
+    "pydantic-settings>=2.11.0",
+    "pypdfium2>=4.30.0",
+    "python-dotenv>=1.1.1",
+    "qwen-vl-utils>=0.0.14",
+    "requests>=2.31.0",
+    "torch>=2.8.0",
+    "torchvision>=0.23.0",
+    "transformers>=4.57.1",
+    "streamlit>=1.50.0",
+    "accelerate>=1.11.0",
+]
+
+[build-system]
+requires = ["setuptools>=61"]
+build-backend = "setuptools.build_meta"
+
+[project.scripts]
+provenance-pipeline = "scripts.run_pipeline:main"
+
+[tool.setuptools.packages.find]
+include = ["chandra*", "scripts*"]
+
+[dependency-groups]
+dev = [
+    "pre-commit>=4.3.0",
+    "pytest>=8.4.2",
+]
+
