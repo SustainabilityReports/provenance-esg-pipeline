@@ -1,6 +1,6 @@
 [project]
 name = "provenance-esg-pipeline"
-version = "0.1.0"
+version = "1.0.0"
 description = "Production pipeline for extracting structured data from ESG/sustainability reports using OCR and vision-language models."
 readme = "README.md"
 requires-python = ">=3.10"
@@ -39,7 +39,7 @@ build-backend = "setuptools.build_meta"
 provenance-pipeline = "scripts.run_pipeline:main"
 
 [tool.setuptools.packages.find]
-include = ["chandra*", "scripts*"]
+include = ["chandra*", "scripts*", "campaign*"]
 
 [dependency-groups]
 dev = [
@@ -47,3 +47,6 @@ dev = [
     "pytest>=8.4.2",
 ]
 
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]

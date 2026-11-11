@@ -1,0 +1,22 @@
+name: CI
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - name: Byte-compile
+        run: python -m compileall -q scripts campaign chandra
+      - name: Shell syntax
+        run: bash -n hpc/leonardo/chandra_ocr_node.slurm
+      - name: Unit tests
+        run: |
+          pip install pytest
+          pytest -q

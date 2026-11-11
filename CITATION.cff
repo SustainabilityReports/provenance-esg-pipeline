@@ -1,0 +1,16 @@
+cff-version: 1.2.0
+message: "If you use this software, please cite it as below."
+title: "Provenance ESG Processing Pipeline"
+version: 1.0.0
+date-released: 2026-11-11
+license: Apache-2.0
+repository-code: "https://github.com/SustainabilityReports/provenance-esg-pipeline"
+url: "https://www.sustainabilityreports.com"
+authors:
+  - name: "SustainabilityReports.com"
+keywords:
+  - ESG
+  - sustainability reporting
+  - OCR
+  - document processing
+  - HPC
